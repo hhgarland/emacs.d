@@ -72,11 +72,25 @@
   :config
   (global-evil-surround-mode 1))
 
-;;; modus themes
-(use-package modus-themes
+;;; visuals
+;; solaire
+(use-package solaire-mode
   :ensure t
   :config
-  (load-theme 'modus-vivendi-deuteranopia t))
+  (solaire-global-mode +1))
+
+;; modus themes
+(use-package modus-themes
+  :ensure t
+  :config)
+
+;; vscode dark theme
+(use-package vscode-dark-plus-theme
+  :ensure t
+  :config)
+
+;; load the theme 
+(load-theme 'vscode-dark-plus t)
 
 ;;; org-mode
 ;; org-mode stuff goes here
@@ -151,6 +165,7 @@
 ;;; git
 ;; git gutter
 (use-package git-gutter+
+  :disabled
   :ensure t
   :init (global-git-gutter+-mode))
 
