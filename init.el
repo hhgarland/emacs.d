@@ -78,6 +78,18 @@
   :config
   (load-theme 'modus-vivendi-deuteranopia t))
 
+;;; org-mode
+;; org-mode stuff goes here
+
+;;; org-babel
+(setq org-src-fontify-natively t)
+(setq org-confirm-babel-evaluate nil)
+
+;; load languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+
 ;;; lsp settings
 (use-package lsp-mode
   :init
@@ -99,10 +111,10 @@
                           (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
 
-;; which-key
-(use-package which-key
-    :config
-    (which-key-mode))
+;;; extra python items
+;; set interpreter to ipython
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 ;;; completion
 ;; company
@@ -184,3 +196,8 @@
 ;; centered window mode
 (use-package centered-window
   :ensure t)
+
+;; which-key
+(use-package which-key
+    :config
+    (which-key-mode))
