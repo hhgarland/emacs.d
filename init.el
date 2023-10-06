@@ -72,7 +72,7 @@
   :config
   (global-evil-surround-mode 1))
 
-;;; visuals
+;;; themes & visuals
 ;; solaire
 (use-package solaire-mode
   :ensure t
@@ -165,9 +165,15 @@
 ;;; git
 ;; git gutter
 (use-package git-gutter+
-  :disabled
   :ensure t
-  :init (global-git-gutter+-mode))
+  :init (global-git-gutter+-mode)
+  :config
+  (setq git-gutter+-modified-sign "~")
+  (setq git-gutter+-added-sign "+")
+  (setq git-gutter+-deleted-sign "-")
+  (set-face-foreground 'git-gutter+-modified "#d670d6")
+  (set-face-foreground 'git-gutter+-added "#23d18b")
+  (set-face-foreground 'git-gutter+-deleted "#f14c4c"))
 
 ;; magit
 (use-package magit
