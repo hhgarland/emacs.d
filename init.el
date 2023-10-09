@@ -50,7 +50,8 @@
 (set-frame-font "JetBrains Mono-14")
 
 ;;; keep emacs custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file
+      (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
 ;;; evil settings
@@ -89,8 +90,8 @@
   :ensure t
   :config)
 
-;; load the theme 
-(load-theme 'vscode-dark-plus t)
+;; load the theme
+(load-theme 'modus-vivendi-deuteranopia t)
 
 ;;; org-mode
 ;; org-mode stuff goes here
@@ -181,6 +182,12 @@
   :bind (("C-x g" . magit-status)))
 
 ;;; other packages
+;; flycheck
+(use-package flycheck
+  :ensure t
+  :config
+  (global-flycheck-mode))
+
 ;; markdown mode
 (use-package markdown-mode
   :ensure t
