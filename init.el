@@ -40,6 +40,8 @@
 (toggle-scroll-bar -1)
 (display-time-mode 1)
 (setq inhibit-startup-message t)
+(custom-set-faces
+ `(fringe ((t (:background nil)))))
 
 ;;; general editing
 (show-paren-mode)
@@ -171,10 +173,7 @@
   :config
   (setq git-gutter+-modified-sign "~")
   (setq git-gutter+-added-sign "+")
-  (setq git-gutter+-deleted-sign "-")
-  (set-face-foreground 'git-gutter+-modified "#d670d6")
-  (set-face-foreground 'git-gutter+-added "#23d18b")
-  (set-face-foreground 'git-gutter+-deleted "#f14c4c"))
+  (setq git-gutter+-deleted-sign "-"))
 
 ;; magit
 (use-package magit
@@ -229,3 +228,5 @@
 (use-package which-key
     :config
     (which-key-mode))
+
+;;; init.el ends here
